@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Cell = () => {
-  const [active, setActive] = useState(false);
+const Cell = ({ toggle, cell }) => {
+  // TODO: if game is active, disable onClick of button
 
   return (
     <button
-      className={`cell ${active && "active"}`}
+      className={`cell ${cell && "active"}`}
       style={{ height: "25px", width: "25px", border: "1px solid green" }}
-      onClick={() => {
-        console.log("active");
-        setActive(!active);
-      }}
+      onClick={toggle}
     ></button>
   );
 };

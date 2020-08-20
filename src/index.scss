@@ -1,5 +1,13 @@
 // Cells
 
 .active {
-  background-color: yellow;
+  background-color: black;
+}
+
+// Control Panel
+
+.controlPanel {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
 }
