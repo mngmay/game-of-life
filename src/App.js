@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Grid from "./components/Grid";
 import Rules from "./components/Rules";
 import ControlPanel from "./components/ControlPanel";
+import { automata } from "./automata";
 
 const ROWS = 25;
 const COLS = 25;
@@ -31,7 +32,7 @@ function App() {
       <Rules />
       Generation: {generation}
       <Grid width={ROWS} height={COLS} grid={grid} toggleCell={toggleCell} />
-      <ControlPanel reset={resetGrid} />
+      <ControlPanel reset={resetGrid} grid={grid} setGrid={setGrid} />
     </div>
   );
 }
