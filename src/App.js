@@ -25,6 +25,11 @@ function App() {
 
   const resetGrid = () => {
     setGrid(makeGrid(ROWS, COLS));
+    setGeneration(0);
+  };
+
+  const addGeneration = () => {
+    setGeneration(generation + 1);
   };
 
   return (
@@ -32,7 +37,13 @@ function App() {
       <Rules />
       Generation: {generation}
       <Grid width={ROWS} height={COLS} grid={grid} toggleCell={toggleCell} />
-      <ControlPanel reset={resetGrid} grid={grid} setGrid={setGrid} />
+      <ControlPanel
+        reset={resetGrid}
+        setGeneration={setGeneration}
+        addGeneration={addGeneration}
+        grid={grid}
+        setGrid={setGrid}
+      />
     </div>
   );
 }
