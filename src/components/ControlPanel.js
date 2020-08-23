@@ -1,23 +1,30 @@
 import React from "react";
 import ControlBtn from "./ControlBtn";
-import { automata } from "../automata";
 
-const ControlPanel = ({ reset, grid, setGrid, addGeneration }) => {
+const ControlPanel = ({
+  reset,
+  toggleGame,
+  running,
+  setSpeed,
+  speed,
+  triggerAutomata,
+}) => {
   return (
     <div className="controlPanel">
-      <ControlBtn type="start" />
-      <ControlBtn type="stop" />
-      <ControlBtn type="slowdown" />
-      <ControlBtn type="speedup" />
-      <ControlBtn type="reset" action={reset} />
+      <ControlBtn type={running ? "stop" : "start"} action={toggleGame} />
       <ControlBtn
-        type="automata"
-        action={() => {
-          let newGrid = automata(grid);
-          setGrid(newGrid);
-          addGeneration();
-        }}
+        type="<<"
+        speedLimit={speed >= 2000}
+        action={() => speed < 2000 && setSpeed(speed + 500)}
       />
+      Speed: {speed}ms
+      <ControlBtn
+        type=">>"
+        speedLimit={speed <= 0}
+        action={() => speed > 0 && setSpeed(speed - 500)}
+      />
+      <ControlBtn type="reset" action={reset} />
+      <ControlBtn type="automata" action={triggerAutomata} />
     </div>
   );
 };

@@ -1,8 +1,11 @@
 import React from "react";
 
-const ControlBtn = ({ action, type }) => {
+const ControlBtn = ({ action, type, speedLimit }) => {
   return (
-    <button className={`ctrlBtn ${type}`} onClick={action}>
+    <button
+      className={`ctrlBtn ${type} ${speedLimit && "speedLimit"}`}
+      onClick={action}
+    >
       {type}
     </button>
   );
