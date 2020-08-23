@@ -1,6 +1,14 @@
 import React from "react";
+import PatternBtn from "./PatternBtn";
 
-const Patterns = ({ makeGrid, setGrid, ROWS, COLS, running }) => {
+const Patterns = ({
+  makeGrid,
+  setGrid,
+  ROWS,
+  COLS,
+  running,
+  setGeneration,
+}) => {
   let width = ROWS;
   let height = COLS;
   let middle = Math.floor(width / 2);
@@ -121,27 +129,28 @@ const Patterns = ({ makeGrid, setGrid, ROWS, COLS, running }) => {
 
   return (
     <div className="patterns">
-      <button
-        className="patternBtn"
-        onClick={() => populateGrid(blinker)}
-        disabled={running ? true : false}
-      >
-        Blinker
-      </button>
-      <button
-        className="patternBtn"
-        onClick={() => populateGrid(pulsar)}
-        disabled={running ? true : false}
-      >
-        Pulsar
-      </button>
-      <button
-        className="patternBtn"
-        onClick={() => populateGrid(glider)}
-        disabled={running ? true : false}
-      >
-        Glider
-      </button>
+      <PatternBtn
+        pattern={blinker}
+        patternName="blinker"
+        running={running}
+        setGeneration={setGeneration}
+        populateGrid={populateGrid}
+      />
+
+      <PatternBtn
+        pattern={pulsar}
+        patternName="pulsar"
+        running={running}
+        setGeneration={setGeneration}
+        populateGrid={populateGrid}
+      />
+      <PatternBtn
+        pattern={glider}
+        patternName="glider"
+        running={running}
+        setGeneration={setGeneration}
+        populateGrid={populateGrid}
+      />
     </div>
   );
 };

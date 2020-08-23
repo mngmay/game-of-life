@@ -18,14 +18,18 @@ const ControlPanel = ({
         speedLimit={speed >= 2000}
         action={() => speed < 2000 && setSpeed(speed + 500)}
       />
-      Speed: {speed}ms
+      Speed: {`${speed}x`}
       <ControlBtn
         type=">>"
         speedLimit={speed <= 0}
         action={() => speed > 0 && setSpeed(speed - 500)}
       />
       <ControlBtn type="reset" action={reset} />
-      <ControlBtn type="automata" action={triggerAutomata} running={running} />
+      <ControlBtn
+        type="manual automata"
+        action={triggerAutomata}
+        running={running}
+      />
     </div>
   );
 };

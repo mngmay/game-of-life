@@ -73,6 +73,7 @@ function App() {
         ROWS={ROWS}
         COLS={COLS}
         running={running}
+        setGeneration={setGeneration}
       />
       <ControlPanel
         reset={resetGrid}
