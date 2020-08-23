@@ -9,10 +9,12 @@ const Patterns = ({
   running,
   setGeneration,
 }) => {
+  // Grid coords
   let width = ROWS;
   let height = COLS;
   let middle = Math.floor(width / 2);
 
+  // Pattern types
   let blinker = [
     [middle - 1, middle],
     [middle, middle],
@@ -117,6 +119,26 @@ const Patterns = ({
     [2, 1],
   ];
 
+  let random = createRandom();
+
+  // Helper functions
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  // creates a random list of coordinates for Random pattern
+  function createRandom() {
+    let randomCoords = [];
+
+    for (let i = 0; i < getRandomInt(15); i++) {
+      randomCoords.push([getRandomInt(width), getRandomInt(height)]);
+    }
+
+    return randomCoords;
+  }
+
+  // creates grid of coordinates based on input pattern
   function populateGrid(coords) {
     let patternedGrid = makeGrid(width, height);
     coords.forEach((coord) => {
@@ -147,6 +169,13 @@ const Patterns = ({
       <PatternBtn
         pattern={glider}
         patternName="glider"
+        running={running}
+        setGeneration={setGeneration}
+        populateGrid={populateGrid}
+      />
+      <PatternBtn
+        pattern={random}
+        patternName="random"
         running={running}
         setGeneration={setGeneration}
         populateGrid={populateGrid}
