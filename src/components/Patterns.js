@@ -100,6 +100,17 @@ const Patterns = ({ makeGrid, setGrid, ROWS, COLS }) => {
     [middle - 6, middle + 4],
   ];
 
+  let mid = [[middle, middle]];
+
+  let glider = [
+    [2, 1],
+    [1, 2],
+    [1, 3],
+    [0, 1],
+    [2, 2],
+    [2, 1],
+  ];
+
   function populateGrid(coords) {
     let patternedGrid = makeGrid(width, height);
     coords.forEach((coord) => {
@@ -112,8 +123,10 @@ const Patterns = ({ makeGrid, setGrid, ROWS, COLS }) => {
 
   return (
     <div>
+      <button onClick={() => populateGrid(mid)}>Middle</button>
       <button onClick={() => populateGrid(blinker)}>Blinker</button>
       <button onClick={() => populateGrid(pulsar)}>Pulsar</button>
+      <button onClick={() => populateGrid(glider)}>Glider</button>
     </div>
   );
 };
