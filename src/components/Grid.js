@@ -2,7 +2,7 @@ import React from "react";
 import Cell from "./Cell";
 import { v4 as uuidv4 } from "uuid";
 
-const Grid = ({ grid, toggleCell }) => {
+const Grid = ({ grid, toggleCell, running }) => {
   return (
     <div className="grid" style={{ width: "625px", border: "1px solid black" }}>
       {grid.map((row, i) => (
@@ -11,6 +11,7 @@ const Grid = ({ grid, toggleCell }) => {
             <Cell
               key={uuidv4()}
               cell={cell}
+              running={running}
               toggle={(e) => {
                 toggleCell(i, j);
               }}

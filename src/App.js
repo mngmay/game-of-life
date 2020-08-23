@@ -60,8 +60,20 @@ function App() {
     <div className="App">
       <Rules />
       Generation: {generation}
-      <Grid width={ROWS} height={COLS} grid={grid} toggleCell={toggleCell} />
-      <Patterns makeGrid={makeGrid} setGrid={setGrid} ROWS={ROWS} COLS={COLS} />
+      <Grid
+        width={ROWS}
+        height={COLS}
+        grid={grid}
+        toggleCell={toggleCell}
+        running={running}
+      />
+      <Patterns
+        makeGrid={makeGrid}
+        setGrid={setGrid}
+        ROWS={ROWS}
+        COLS={COLS}
+        running={running}
+      />
       <ControlPanel
         reset={resetGrid}
         setGeneration={setGeneration}

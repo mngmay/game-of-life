@@ -1,6 +1,6 @@
 import React from "react";
 
-const Patterns = ({ makeGrid, setGrid, ROWS, COLS }) => {
+const Patterns = ({ makeGrid, setGrid, ROWS, COLS, running }) => {
   let width = ROWS;
   let height = COLS;
   let middle = Math.floor(width / 2);
@@ -100,8 +100,6 @@ const Patterns = ({ makeGrid, setGrid, ROWS, COLS }) => {
     [middle - 6, middle + 4],
   ];
 
-  let mid = [[middle, middle]];
-
   let glider = [
     [2, 1],
     [1, 2],
@@ -122,11 +120,28 @@ const Patterns = ({ makeGrid, setGrid, ROWS, COLS }) => {
   }
 
   return (
-    <div>
-      <button onClick={() => populateGrid(mid)}>Middle</button>
-      <button onClick={() => populateGrid(blinker)}>Blinker</button>
-      <button onClick={() => populateGrid(pulsar)}>Pulsar</button>
-      <button onClick={() => populateGrid(glider)}>Glider</button>
+    <div className="patterns">
+      <button
+        className="patternBtn"
+        onClick={() => populateGrid(blinker)}
+        disabled={running ? true : false}
+      >
+        Blinker
+      </button>
+      <button
+        className="patternBtn"
+        onClick={() => populateGrid(pulsar)}
+        disabled={running ? true : false}
+      >
+        Pulsar
+      </button>
+      <button
+        className="patternBtn"
+        onClick={() => populateGrid(glider)}
+        disabled={running ? true : false}
+      >
+        Glider
+      </button>
     </div>
   );
 };

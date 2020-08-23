@@ -9,6 +9,7 @@ const ControlPanel = ({
   speed,
   triggerAutomata,
 }) => {
+  // For buttons that need to be disabled during animation, pass running prop
   return (
     <div className="controlPanel">
       <ControlBtn type={running ? "stop" : "start"} action={toggleGame} />
@@ -24,7 +25,7 @@ const ControlPanel = ({
         action={() => speed > 0 && setSpeed(speed - 500)}
       />
       <ControlBtn type="reset" action={reset} />
-      <ControlBtn type="automata" action={triggerAutomata} />
+      <ControlBtn type="automata" action={triggerAutomata} running={running} />
     </div>
   );
 };
