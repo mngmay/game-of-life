@@ -32,6 +32,28 @@
 .generation {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .status {
+    width: 30px;
+    height: 40px;
+  }
+
+  .play {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 20px 0px 20px 34px;
+    border-color: transparent transparent transparent black;
+  }
+
+  .pause {
+    border-left: 10px solid black;
+    border-right: 10px solid black;
+    margin-right: 12px;
+  }
 }
 
 // Dashboard
@@ -60,7 +82,7 @@
 // Grid
 
 .grid {
-  border: 2px solid black;
+  // border: 2px solid black;
 }
 
 // Cells
@@ -68,7 +90,6 @@
 .cell {
   border: 1px solid black;
   background: white;
-  margin: 0.5px;
 }
 
 .active {

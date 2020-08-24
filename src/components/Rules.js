@@ -14,6 +14,12 @@ const Rules = () => {
           dead cells stay dead.
         </li>
       </ul>
+      <div className="contact">
+        <span>GitHub</span>
+        <a href="https://mayng.dev" rel="noopener noreferrer" target="_blank">
+          Portfolio
+        </a>
+      </div>
     </div>
   );
 };

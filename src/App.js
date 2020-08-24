@@ -65,7 +65,7 @@ function App() {
         <div className="board">
           <h2 className={`generation`}>
             Generation: {generation}{" "}
-            <span className="status">{running ? "PLAYING" : "||"}</span>
+            <span className={`status ${running ? "play" : "pause"}`} />
           </h2>
           <Grid
             width={ROWS}
