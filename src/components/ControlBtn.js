@@ -3,9 +3,9 @@ import React from "react";
 const ControlBtn = ({ action, type, speedLimit, running }) => {
   return (
     <button
-      className={`ctrlBtn ${type} ${speedLimit && "speedLimit"}`}
+      className={`ctrlBtn ${type} ${speedLimit ? "speedLimit" : "active"}`}
       onClick={action}
-      disabled={running ? true : false}
+      disabled={running || speedLimit ? true : false}
     >
       {type}
     </button>

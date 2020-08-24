@@ -1,4 +1,75 @@
+@import "/styles/reset";
+@import "/styles/global";
+@import "/styles/variables";
+
+.App {
+  width: 80%;
+  margin: 0 auto;
+  font-family: $primary-font;
+
+  button {
+    outline: none;
+  }
+
+  h1,
+  h2 {
+    font-family: $header-font;
+  }
+}
+
+// Header
+
+.header {
+  margin: 3rem;
+  margin-left: 6%;
+}
+
+.may {
+  color: red;
+  font-style: italic;
+}
+
+.generation {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Dashboard
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+
+  .board {
+    border: 1px solid black;
+    border-right: none;
+    padding: 2rem;
+  }
+
+  .patterns {
+    border: 1px solid black;
+    border-left: none;
+    padding: 2rem;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column-reverse;
+  }
+}
+
+// Grid
+
+.grid {
+  border: 2px solid black;
+}
+
 // Cells
+
+.cell {
+  border: 1px solid black;
+  background: white;
+  margin: 0.5px;
+}
 
 .active {
   background-color: black;
@@ -9,16 +80,54 @@
 .controlPanel {
   display: flex;
   justify-content: space-evenly;
-  width: 50%;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+
+  // hit limit on speed max/min
+  .speedLimit {
+    border: 2px solid gray;
+    color: gray;
+  }
 }
 
-// hit limit on speed max/min
-.speedLimit {
-  background-color: gray;
+.patterns,
+.controlPanel {
+  button {
+    border: 2px solid black;
+    background-color: white;
+    padding: 0.5rem;
+    text-transform: capitalize;
+  }
+
+  button:hover {
+    background: black;
+    color: white;
+  }
 }
 
 // Patterns
 
-.patternBtn {
-  text-transform: capitalize;
+.patterns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+// Rules
+
+.rules {
+  font-size: 1.75rem;
+  background-color: lightgray;
+  padding: 2rem;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  li {
+    margin: 1rem;
+  }
 }

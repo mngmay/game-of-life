@@ -2,8 +2,8 @@ import React from "react";
 
 const Rules = () => {
   return (
-    <div>
-      <h1>Conway's Rules</h1>
+    <div className="rules">
+      <h2>Rules</h2>
       <ul>
         <li>Any live cell with two or three live neighbors survives.</li>
         <li>

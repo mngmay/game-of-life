@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Dashboard from "./components/Dashboard";
 import Grid from "./components/Grid";
 import Rules from "./components/Rules";
 import ControlPanel from "./components/ControlPanel";
@@ -58,35 +60,43 @@ function App() {
 
   return (
     <div className="App">
-      <Rules />
-      Generation: {generation}
-      <Grid
-        width={ROWS}
-        height={COLS}
-        grid={grid}
-        toggleCell={toggleCell}
-        running={running}
-      />
-      <Patterns
-        makeGrid={makeGrid}
-        setGrid={setGrid}
-        ROWS={ROWS}
-        COLS={COLS}
-        running={running}
-        setGeneration={setGeneration}
-      />
-      <ControlPanel
-        reset={resetGrid}
-        setGeneration={setGeneration}
-        addGeneration={addGeneration}
-        triggerAutomata={triggerAutomata}
-        grid={grid}
-        setGrid={setGrid}
-        toggleGame={toggleGame}
-        running={running}
-        setSpeed={setSpeed}
-        speed={speed}
-      />
+      <Header />
+      <Dashboard>
+        <div className="board">
+          <h2 className={`generation`}>
+            Generation: {generation}{" "}
+            <span className="status">{running ? "PLAYING" : "||"}</span>
+          </h2>
+          <Grid
+            width={ROWS}
+            height={COLS}
+            grid={grid}
+            toggleCell={toggleCell}
+            running={running}
+          />
+          <ControlPanel
+            reset={resetGrid}
+            setGeneration={setGeneration}
+            addGeneration={addGeneration}
+            triggerAutomata={triggerAutomata}
+            grid={grid}
+            setGrid={setGrid}
+            toggleGame={toggleGame}
+            running={running}
+            setSpeed={setSpeed}
+            speed={speed}
+          />
+        </div>
+        <Patterns
+          makeGrid={makeGrid}
+          setGrid={setGrid}
+          ROWS={ROWS}
+          COLS={COLS}
+          running={running}
+          setGeneration={setGeneration}
+        />
+        <Rules />
+      </Dashboard>
     </div>
   );
 }

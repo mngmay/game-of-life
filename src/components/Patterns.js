@@ -21,6 +21,7 @@ const Patterns = ({
     [middle + 1, middle],
   ];
 
+  // TODO: better calculations for varying grid sizes
   let pulsar = [
     [middle - 1, middle - 2],
     [middle - 1, middle + 3],
@@ -123,15 +124,17 @@ const Patterns = ({
 
   // Helper functions
 
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+  function getRandomInt(max, min = 0) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
   }
 
   // creates a random list of coordinates for Random pattern
   function createRandom() {
     let randomCoords = [];
 
-    for (let i = 0; i < getRandomInt(15); i++) {
+    for (let i = 0; i < getRandomInt(10, 20); i++) {
       randomCoords.push([getRandomInt(width), getRandomInt(height)]);
     }
 
