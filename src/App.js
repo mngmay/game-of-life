@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Header from "./components/Header";
 import Dashboard from "./components/Dashboard";
 import Grid from "./components/Grid/Grid";
@@ -31,9 +31,9 @@ function App() {
     setGrid(newGrid);
   };
 
-  const addGeneration = () => {
+  const addGeneration = useCallback(() => {
     setGeneration(generation + 1);
-  };
+  }, [generation]);
 
   const resetGrid = () => {
     setRunning(false);
@@ -45,11 +45,11 @@ function App() {
     setRunning(!running);
   };
 
-  const triggerAutomata = () => {
+  const triggerAutomata = useCallback(() => {
     let newGrid = automata(grid);
     addGeneration();
     setGrid(newGrid);
-  };
+  }, [addGeneration, grid]);
 
   useEffect(() => {
     if (running) {
@@ -58,7 +58,7 @@ function App() {
       }, speed);
       return () => clearInterval(playing);
     }
-  }, [running, grid]);
+  }, [running, grid, speed, triggerAutomata]);
 
   return (
     <div className="App">
