@@ -139,7 +139,7 @@ const Patterns = ({
   function createRandom() {
     let randomCoords = [];
 
-    for (let i = 0; i < getRandomInt(10, 20); i++) {
+    for (let i = 0; i < getRandomInt(25, 300); i++) {
       randomCoords.push([getRandomInt(width), getRandomInt(height)]);
     }
 
