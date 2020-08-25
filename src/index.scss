@@ -122,7 +122,7 @@
   flex-wrap: wrap;
   justify-content: center;
   box-sizing: content-box;
-  border: 2px solid black;
+  border: 3px solid black;
   height: 625px;
   width: 625px;
 
@@ -147,6 +147,7 @@
   @media (max-width: $breakpoint-tablet) {
     height: 12px;
     width: 12px;
+    padding: 0;
   }
 }
 
@@ -215,7 +216,6 @@
 
   @media (max-width: $breakpoint-mobile) {
     flex-wrap: wrap;
-    border: 1px solid blue;
     justify-content: space-between;
   }
 }
@@ -237,7 +237,7 @@
   height: 125px;
 }
 
-// Rules
+// Side Panel
 
 .sidePanel {
   font-size: 1.75rem;
