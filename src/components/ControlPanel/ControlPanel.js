@@ -25,11 +25,7 @@ const ControlPanel = ({
         action={() => speed > 0 && setSpeed(speed - 500)}
       />
       <ControlBtn type="reset" action={reset} />
-      <ControlBtn
-        type="manual automata"
-        action={triggerAutomata}
-        running={running}
-      />
+      <ControlBtn type="automata" action={triggerAutomata} running={running} />
     </div>
   );
 };

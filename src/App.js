@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Dashboard from "./components/Dashboard";
-import Grid from "./components/Grid";
-import Rules from "./components/Rules";
-import ControlPanel from "./components/ControlPanel";
-import Patterns from "./components/Patterns";
+import Grid from "./components/Grid/Grid";
+import Rules from "./components/SidePanel/Rules";
+import Contact from "./components/SidePanel/Contact";
+import ControlPanel from "./components/ControlPanel/ControlPanel";
+import Patterns from "./components/Patterns/Patterns";
 import { automata } from "./automata";
 
 const ROWS = 25;
@@ -95,7 +96,10 @@ function App() {
           running={running}
           setGeneration={setGeneration}
         />
-        <Rules />
+        <div className="sidePanel">
+          <Rules />
+          <Contact />
+        </div>
       </Dashboard>
     </div>
   );

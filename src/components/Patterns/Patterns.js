@@ -1,6 +1,10 @@
 import React from "react";
 import PatternBtn from "./PatternBtn";
 import Thumbnail from "./Thumbnail";
+import blinkerPic from "../../assets/blinker.png";
+import pulsarPic from "../../assets/pulsar.png";
+import gliderPic from "../../assets/glider.png";
+import randomPic from "../../assets/random.png";
 
 const Patterns = ({
   makeGrid,
@@ -155,7 +159,7 @@ const Patterns = ({
 
   return (
     <div className="patterns">
-      <Thumbnail />
+      <Thumbnail pic={blinkerPic} />
       <PatternBtn
         pattern={blinker}
         patternName="blinker"
@@ -163,7 +167,7 @@ const Patterns = ({
         setGeneration={setGeneration}
         populateGrid={populateGrid}
       />
-      <Thumbnail />
+      <Thumbnail pic={pulsarPic} />
       <PatternBtn
         pattern={pulsar}
         patternName="pulsar"
@@ -171,7 +175,7 @@ const Patterns = ({
         setGeneration={setGeneration}
         populateGrid={populateGrid}
       />
-      <Thumbnail />
+      <Thumbnail pic={gliderPic} />
       <PatternBtn
         pattern={glider}
         patternName="glider"
@@ -179,7 +183,7 @@ const Patterns = ({
         setGeneration={setGeneration}
         populateGrid={populateGrid}
       />
-      <Thumbnail />
+      <Thumbnail pic={randomPic} />
       <PatternBtn
         pattern={random}
         patternName="random"
