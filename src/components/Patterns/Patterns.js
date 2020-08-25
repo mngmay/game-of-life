@@ -1,6 +1,10 @@
 import React from "react";
 import PatternBtn from "./PatternBtn";
 import Thumbnail from "./Thumbnail";
+import blinkerPic from "../../assets/blinker.png";
+import pulsarPic from "../../assets/pulsar.png";
+import gliderPic from "../../assets/glider.png";
+import randomPic from "../../assets/random.png";
 
 const Patterns = ({
   makeGrid,
@@ -155,38 +159,46 @@ const Patterns = ({
 
   return (
     <div className="patterns">
-      <Thumbnail />
-      <PatternBtn
-        pattern={blinker}
-        patternName="blinker"
-        running={running}
-        setGeneration={setGeneration}
-        populateGrid={populateGrid}
-      />
-      <Thumbnail />
-      <PatternBtn
-        pattern={pulsar}
-        patternName="pulsar"
-        running={running}
-        setGeneration={setGeneration}
-        populateGrid={populateGrid}
-      />
-      <Thumbnail />
-      <PatternBtn
-        pattern={glider}
-        patternName="glider"
-        running={running}
-        setGeneration={setGeneration}
-        populateGrid={populateGrid}
-      />
-      <Thumbnail />
-      <PatternBtn
-        pattern={random}
-        patternName="random"
-        running={running}
-        setGeneration={setGeneration}
-        populateGrid={populateGrid}
-      />
+      <div className="patternGroup">
+        <Thumbnail pic={blinkerPic} />
+        <PatternBtn
+          pattern={blinker}
+          patternName="blinker"
+          running={running}
+          setGeneration={setGeneration}
+          populateGrid={populateGrid}
+        />
+      </div>
+      <div className="patternGroup">
+        <Thumbnail pic={pulsarPic} />
+        <PatternBtn
+          pattern={pulsar}
+          patternName="pulsar"
+          running={running}
+          setGeneration={setGeneration}
+          populateGrid={populateGrid}
+        />
+      </div>
+      <div className="patternGroup">
+        <Thumbnail pic={gliderPic} />
+        <PatternBtn
+          pattern={glider}
+          patternName="glider"
+          running={running}
+          setGeneration={setGeneration}
+          populateGrid={populateGrid}
+        />
+      </div>
+      <div className="patternGroup">
+        <Thumbnail pic={randomPic} />
+        <PatternBtn
+          pattern={random}
+          patternName="random"
+          running={running}
+          setGeneration={setGeneration}
+          populateGrid={populateGrid}
+        />
+      </div>
     </div>
   );
 };

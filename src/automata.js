@@ -3,8 +3,6 @@ import { cloneDeep } from "lodash";
 export const automata = (grid) => {
   let buffer = cloneDeep(grid);
 
-  console.log(grid);
-
   // up, down, left, right, nw, sw, ne, se
   const NEIGHBORS = [
     [1, 0],

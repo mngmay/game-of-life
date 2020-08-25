@@ -2,6 +2,14 @@
 @import "/styles/global";
 @import "/styles/variables";
 
+.mobile {
+  display: none;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: block;
+  }
+}
+
 .App {
   width: 80%;
   margin: 0 auto;
@@ -20,15 +28,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 95%;
   }
 }
 
 // Header
 
 .header {
-  margin: 3rem;
-  margin-left: 6%;
+  margin: 3rem 0;
 }
 
 .may {
@@ -38,9 +45,18 @@
 
 .generation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 10px;
+  width: 100%;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 50%;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+  }
 
   .status {
     width: 30px;
@@ -69,13 +85,22 @@
   display: flex;
   justify-content: center;
 
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
   .board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid $main-color;
     border-right: none;
     padding: 2rem;
+    width: 100%;
 
     @media (max-width: $breakpoint-tablet) {
-      width: 100%;
+      border: none;
     }
   }
 
@@ -83,10 +108,10 @@
     border: 1px solid $main-color;
     border-left: none;
     padding: 2rem;
-  }
 
-  @media (max-width: $breakpoint-tablet) {
-    flex-direction: column-reverse;
+    @media (max-width: $breakpoint-tablet) {
+      border: none;
+    }
   }
 }
 
@@ -97,7 +122,14 @@
   flex-wrap: wrap;
   justify-content: center;
   box-sizing: content-box;
-  border: 2px solid black;
+  border: 3px solid black;
+  height: 625px;
+  width: 625px;
+
+  @media (max-width: $breakpoint-tablet) {
+    height: 300px;
+    width: 300px;
+  }
 }
 
 .row {
@@ -112,9 +144,10 @@
   height: 25px;
   width: 25px;
 
-  @media (max-width: $breakpoint-mobile) {
-    height: 15px;
-    width: 15px;
+  @media (max-width: $breakpoint-tablet) {
+    height: 12px;
+    width: 12px;
+    padding: 0;
   }
 }
 
@@ -130,6 +163,15 @@
   align-items: center;
   padding: 1rem;
   font-size: 1.5rem;
+  width: 100%;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 75%;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+  }
 
   .start {
     background: $start;
@@ -166,14 +208,54 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
+  @media (max-width: $breakpoint-tablet) {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 
-// Rules
+.patternGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
 
-.rules {
+  @media (max-width: $breakpoint-mobile) {
+    margin: 10px;
+  }
+}
+
+.thumbnail {
+  border: 1px solid $main-color;
+  width: 125px;
+  height: 125px;
+}
+
+// Side Panel
+
+.sidePanel {
   font-size: 1.75rem;
   background-color: lightgray;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    color: $main-color;
+  }
+
+  a:hover {
+    color: white;
+  }
 
   ul {
     display: flex;
@@ -183,5 +265,25 @@
 
   li {
     margin: 1rem;
+  }
+
+  .top {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .github {
+    display: flex;
+    align-items: center;
+    width: 15%;
+    justify-content: space-evenly;
   }
 }
