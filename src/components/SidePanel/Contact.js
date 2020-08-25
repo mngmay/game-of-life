@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="contact">
       <div className="github">
-        <FontAwesomeIcon icon={faGithub} size="2x" />{" "}
+        <FontAwesomeIcon icon={faGithub} size="2x" />
         <a
           href="https://github.com/mngmay"
           rel="noopener noreferrer"

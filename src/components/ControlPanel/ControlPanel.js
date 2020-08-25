@@ -18,7 +18,7 @@ const ControlPanel = ({
         speedLimit={speed >= 2000}
         action={() => speed < 2000 && setSpeed(speed + 500)}
       />
-      <span>Speed: {`${speed}x`}</span>
+      <span>Speed: {`${(1 / speed) * 1000}x`}</span>
       <ControlBtn
         type=">>"
         speedLimit={speed <= 0}

@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import Grid from "./components/Grid/Grid";
 import Rules from "./components/SidePanel/Rules";
 import Contact from "./components/SidePanel/Contact";
+import Resources from "./components/SidePanel/Resources";
 import ControlPanel from "./components/ControlPanel/ControlPanel";
 import Patterns from "./components/Patterns/Patterns";
 import { automata } from "./automata";
@@ -63,18 +64,12 @@ function App() {
     <div className="App">
       <Header />
       <Dashboard>
-        <div className="board">
+        <section className="board">
           <h2 className={`generation`}>
             Generation: {generation}{" "}
             <span className={`status ${running ? "play" : "pause"}`} />
           </h2>
-          <Grid
-            width={ROWS}
-            height={COLS}
-            grid={grid}
-            toggleCell={toggleCell}
-            running={running}
-          />
+          <Grid grid={grid} toggleCell={toggleCell} running={running} />
           <ControlPanel
             reset={resetGrid}
             setGeneration={setGeneration}
@@ -87,7 +82,7 @@ function App() {
             setSpeed={setSpeed}
             speed={speed}
           />
-        </div>
+        </section>
         <Patterns
           makeGrid={makeGrid}
           setGrid={setGrid}
@@ -96,10 +91,13 @@ function App() {
           running={running}
           setGeneration={setGeneration}
         />
-        <div className="sidePanel">
-          <Rules />
+        <section className="sidePanel">
+          <div className="top">
+            <Rules />
+            <Resources />
+          </div>
           <Contact />
-        </div>
+        </section>
       </Dashboard>
     </div>
   );

@@ -159,38 +159,46 @@ const Patterns = ({
 
   return (
     <div className="patterns">
-      <Thumbnail pic={blinkerPic} />
-      <PatternBtn
-        pattern={blinker}
-        patternName="blinker"
-        running={running}
-        setGeneration={setGeneration}
-        populateGrid={populateGrid}
-      />
-      <Thumbnail pic={pulsarPic} />
-      <PatternBtn
-        pattern={pulsar}
-        patternName="pulsar"
-        running={running}
-        setGeneration={setGeneration}
-        populateGrid={populateGrid}
-      />
-      <Thumbnail pic={gliderPic} />
-      <PatternBtn
-        pattern={glider}
-        patternName="glider"
-        running={running}
-        setGeneration={setGeneration}
-        populateGrid={populateGrid}
-      />
-      <Thumbnail pic={randomPic} />
-      <PatternBtn
-        pattern={random}
-        patternName="random"
-        running={running}
-        setGeneration={setGeneration}
-        populateGrid={populateGrid}
-      />
+      <div className="patternGroup">
+        <Thumbnail pic={blinkerPic} />
+        <PatternBtn
+          pattern={blinker}
+          patternName="blinker"
+          running={running}
+          setGeneration={setGeneration}
+          populateGrid={populateGrid}
+        />
+      </div>
+      <div className="patternGroup">
+        <Thumbnail pic={pulsarPic} />
+        <PatternBtn
+          pattern={pulsar}
+          patternName="pulsar"
+          running={running}
+          setGeneration={setGeneration}
+          populateGrid={populateGrid}
+        />
+      </div>
+      <div className="patternGroup">
+        <Thumbnail pic={gliderPic} />
+        <PatternBtn
+          pattern={glider}
+          patternName="glider"
+          running={running}
+          setGeneration={setGeneration}
+          populateGrid={populateGrid}
+        />
+      </div>
+      <div className="patternGroup">
+        <Thumbnail pic={randomPic} />
+        <PatternBtn
+          pattern={random}
+          patternName="random"
+          running={running}
+          setGeneration={setGeneration}
+          populateGrid={populateGrid}
+        />
+      </div>
     </div>
   );
 };
