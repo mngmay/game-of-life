@@ -191,7 +191,7 @@
     text-transform: capitalize;
   }
 
-  .active:hover {
+  button:active {
     background: $main-color;
     color: white;
   }
