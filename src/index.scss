@@ -1,0 +1,187 @@
+@import "/styles/reset";
+@import "/styles/global";
+@import "/styles/variables";
+
+.App {
+  width: 80%;
+  margin: 0 auto;
+  font-family: $primary-font;
+
+  button {
+    outline: none;
+  }
+
+  h1,
+  h2 {
+    font-family: $header-font;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+// Header
+
+.header {
+  margin: 3rem;
+  margin-left: 6%;
+}
+
+.may {
+  color: $stop;
+  font-style: italic;
+}
+
+.generation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .status {
+    width: 30px;
+    height: 40px;
+  }
+
+  .play {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 20px 0px 20px 34px;
+    border-color: transparent transparent transparent $main-color;
+  }
+
+  .pause {
+    border-left: 10px solid $main-color;
+    border-right: 10px solid $main-color;
+    margin-right: 12px;
+  }
+}
+
+// Dashboard
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+
+  .board {
+    border: 1px solid $main-color;
+    border-right: none;
+    padding: 2rem;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+    }
+  }
+
+  .patterns {
+    border: 1px solid $main-color;
+    border-left: none;
+    padding: 2rem;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column-reverse;
+  }
+}
+
+// Grid
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: content-box;
+  border: 2px solid black;
+}
+
+.row {
+  display: flex;
+}
+
+// Cells
+
+.cell {
+  border: 1px solid $main-color;
+  background: white;
+  height: 25px;
+  width: 25px;
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.active {
+  background-color: $main-color;
+}
+
+// Control Panel
+
+.controlPanel {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+
+  .start {
+    background: $start;
+  }
+
+  .stop {
+    background: $stop;
+  }
+}
+
+.patterns,
+.controlPanel {
+  button {
+    border: 2px solid $main-color;
+    background-color: white;
+    padding: 0.5rem;
+    text-transform: capitalize;
+  }
+
+  .active:hover {
+    background: $main-color;
+    color: white;
+  }
+
+  button:disabled {
+    border-color: $deactivated;
+    color: $deactivated;
+  }
+}
+
+// Patterns
+
+.patterns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+// Rules
+
+.rules {
+  font-size: 1.75rem;
+  background-color: lightgray;
+  padding: 2rem;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  li {
+    margin: 1rem;
+  }
+}
