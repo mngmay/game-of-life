@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
 // colors
+$main-color: black;
+$deactivated: lightgray;
 
 // media queries
 
@@ -12,3 +14,5 @@ $breakpoint-tablet: 768px;
 
 $primary-font: "Roboto", sans-serif;
 $header-font: "Source Code Pro", monospace;
+$start: #4f9d69;
+$stop: #dd0426;

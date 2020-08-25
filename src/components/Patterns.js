@@ -1,5 +1,6 @@
 import React from "react";
 import PatternBtn from "./PatternBtn";
+import Thumbnail from "./Thumbnail";
 
 const Patterns = ({
   makeGrid,
@@ -154,6 +155,7 @@ const Patterns = ({
 
   return (
     <div className="patterns">
+      <Thumbnail />
       <PatternBtn
         pattern={blinker}
         patternName="blinker"
@@ -161,7 +163,7 @@ const Patterns = ({
         setGeneration={setGeneration}
         populateGrid={populateGrid}
       />
-
+      <Thumbnail />
       <PatternBtn
         pattern={pulsar}
         patternName="pulsar"
@@ -169,6 +171,7 @@ const Patterns = ({
         setGeneration={setGeneration}
         populateGrid={populateGrid}
       />
+      <Thumbnail />
       <PatternBtn
         pattern={glider}
         patternName="glider"
@@ -176,6 +179,7 @@ const Patterns = ({
         setGeneration={setGeneration}
         populateGrid={populateGrid}
       />
+      <Thumbnail />
       <PatternBtn
         pattern={random}
         patternName="random"
