@@ -2,6 +2,8 @@
 
 This project is May's version of the famous Conway's Game Of Life.
 
+A live version of this game is hosted here: https://conmays.netlify.app/
+
 ## Game Rules
 
 - Any live cell with two or three live neighbors survives.
