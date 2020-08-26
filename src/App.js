@@ -9,6 +9,7 @@ import Resources from "./components/SidePanel/Resources";
 import ControlPanel from "./components/ControlPanel/ControlPanel";
 import Patterns from "./components/Patterns/Patterns";
 import { automata } from "./automata";
+import Loader from "react-loader-spinner";
 
 const ROWS = 25;
 const COLS = 25;
@@ -71,7 +72,18 @@ function App() {
         <section className="board">
           <h2 className={`generation`}>
             Generation: {generation}{" "}
-            {/* <span className={`status ${running ? "play" : "pause"}`} /> */}
+            <div className="loading">
+              {running && (
+                <Loader
+                  type="TailSpin"
+                  color="black"
+                  secondaryColor="black"
+                  height={50}
+                  width={50}
+                  radius={10}
+                />
+              )}
+            </div>
           </h2>
           <Grid grid={grid} toggleCell={toggleCell} running={running} />
           <ControlPanel
