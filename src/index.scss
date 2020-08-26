@@ -251,7 +251,8 @@
   li {
     margin: 1rem;
     list-style-type: square;
-    list-style-position: inside;
+    list-style-position: outside;
+    margin-left: 3rem;
   }
 
   .top {
