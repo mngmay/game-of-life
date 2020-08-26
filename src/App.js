@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Dashboard from "./components/Dashboard";
 import Grid from "./components/Grid/Grid";
 import Rules from "./components/SidePanel/Rules";
+import Instructions from "./components/SidePanel/Instructions";
 import Contact from "./components/SidePanel/Contact";
 import Resources from "./components/SidePanel/Resources";
 import ControlPanel from "./components/ControlPanel/ControlPanel";
@@ -47,6 +48,9 @@ function App() {
 
   const triggerAutomata = useCallback(() => {
     let newGrid = automata(grid);
+    if (JSON.stringify(grid) === JSON.stringify(newGrid)) {
+      return;
+    }
     addGeneration();
     setGrid(newGrid);
   }, [addGeneration, grid]);
@@ -67,7 +71,7 @@ function App() {
         <section className="board">
           <h2 className={`generation`}>
             Generation: {generation}{" "}
-            <span className={`status ${running ? "play" : "pause"}`} />
+            {/* <span className={`status ${running ? "play" : "pause"}`} /> */}
           </h2>
           <Grid grid={grid} toggleCell={toggleCell} running={running} />
           <ControlPanel
@@ -94,6 +98,7 @@ function App() {
         <section className="sidePanel">
           <div className="top">
             <Rules />
+            <Instructions />
             <Resources />
           </div>
           <Contact />
