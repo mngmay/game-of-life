@@ -13,6 +13,7 @@ const Rules = () => {
           All other live cells die in the next generation. Similarly, all other
           dead cells stay dead.
         </li>
+        <li>In this version of the game, the edges are considered dead.</li>
       </ul>
     </div>
   );

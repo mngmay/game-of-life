@@ -45,10 +45,10 @@
 
 .generation {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  width: 100%;
+  width: 625px;
 
   @media (max-width: $breakpoint-tablet) {
     width: 50%;
@@ -58,24 +58,9 @@
     width: 100%;
   }
 
-  .status {
-    width: 30px;
-    height: 40px;
-  }
-
-  .play {
-    width: 40px;
-    height: 40px;
-    box-sizing: border-box;
-    border-style: solid;
-    border-width: 20px 0px 20px 34px;
-    border-color: transparent transparent transparent $main-color;
-  }
-
-  .pause {
-    border-left: 10px solid $main-color;
-    border-right: 10px solid $main-color;
-    margin-right: 12px;
+  .loading {
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -265,13 +250,19 @@
 
   li {
     margin: 1rem;
+    list-style-type: square;
+    list-style-position: inside;
   }
 
   .top {
-    height: 50%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .playType {
+    color: $stop;
   }
 }
 
